@@ -1,0 +1,1 @@
+json.partial! "add_atm_machines/add_atm_machine", add_atm_machine: @add_atm_machine

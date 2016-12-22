@@ -1,0 +1,19 @@
+<%= form_for @account, url: create_deposite_account_path, method: :post do |f| %>
+  
+
+  <div class="field">
+   
+    <%= f.hidden_field :deposite , value: 2 %>
+  </div>
+ 
+  <div class="field">
+   
+    <%= f.text_field :amount , placeholder: "Enter the amount here"%>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit 'Withdrawal' %>
+  </div>
+<% end %>
+
+

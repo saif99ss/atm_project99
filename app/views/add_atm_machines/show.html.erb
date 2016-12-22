@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @add_atm_machine.address %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @add_atm_machine.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @add_atm_machine.city %>
+</p>
+
+
+
+
+<%= link_to 'Deposite',  new_deposite_account_path %>
+<%= link_to 'Withdrawal',   new_withdrawal_account_path %><br>
+
+
+
+
+<%= image_tag"https://maps.googleapis.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@add_atm_machine.latitude}%2C#{@add_atm_machine.longitude}" %>
+
+
+<h3>Nearby ATM_Location</h3>
+<ul>
+<% for add_atm_machine in  @add_atm_machine.nearbys(10) %>
+<li><%= link_to add_atm_machine.address, atm_machine %> (<%= add_atm_machine.distance.round(2) %> miles)</li>
+<% end %>
+
+
+<%= link_to 'Edit', edit_add_atm_machine_path(@add_atm_machine) %> |
+<%= link_to 'Back', add_atm_machines_path %>
